@@ -1,4 +1,4 @@
-# TG-CDDP: Antimicrobial Peptides Generation Based on Text-Guided Conditional Denoising Diffusion Probabilistic Model
+# TG-CDDPM: Text-Guided Antimicrobial Peptides Generation Based on Conditional Denoising Diffusion Probabilistic Model
 
 
 
