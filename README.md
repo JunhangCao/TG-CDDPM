@@ -2,7 +2,7 @@
 
 
 
-## installation
+## Installation
 
 #### pull project
 
@@ -20,7 +20,42 @@ the required data and checkpoints can be downloaded:
 
 https://drive.google.com/drive/folders/1aN3cScePnxq368pL6ymeKFj8EFenPBj0?usp=drive_link
 
-## train
+## File Structure
+└─TG-CDDP-main
+    │  README.md
+    │  requirements.txt
+    │
+    ├─config
+    │      backen_config.py
+    │      base_config.py
+    │      config.json
+    │
+    ├─mapping
+    │      vocab.txt
+    │
+    ├─model
+    │      backend.py
+    │      diffusion.py
+    │      diffusion_sample.py
+    │      fp16_utils.py
+    │      gaussian_diffusion.py
+    │      losses.py
+    │      nn.py
+    │      resample.py
+    │      respace.py
+    │      rounding.py
+    │      sampling.py
+    │
+    ├─train
+    │      diffusion_train.py
+    │      TexPepAlignment.py
+    │
+    └─utils
+            script_utils.py
+            tokenizer.py
+            train_util.py
+
+## Train
 if you want re-train the whole framework. <br/>
 
 #### stage 1
@@ -67,6 +102,6 @@ def training_losses_seq2seq(self, model, x_start, t, model_kwargs=None, noise=No
 >>...  
 run diffusion_train.py for fine-training text-guided DDPM.
 
-## sampling
+## Sampling
 set text description in 'test_text = ['xxx']' in model.sampling.py  
 run sampling.py for sampling.
