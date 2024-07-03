@@ -27,14 +27,14 @@ if you want re-train the whole framework. <br/>
 run TexPepAlignment.py for training peptide encoder and text encoder.
 
 #### stage 2
-adjust forward_backward in utils.train_utils.py and loss function in gaussian_diffusion.py for adapter.
+adjust forward_backward in utils.train_utils.py and loss function in gaussian_diffusion.py for adapter.  
 run diffusion_train.py for training adapter.
 
 #### stage 3
-pretrained DDPM has been prepared.
-adjust forward_backward in utils.train_utils.py and loss function in diffusion for text-guided fine-tuning DDPM.
+pretrained DDPM has been prepared.  
+adjust forward_backward in utils.train_utils.py and loss function in diffusion for text-guided fine-tuning DDPM.  
 run diffusion_train.py for fine-training text-guided DDPM.
 
 ## sampling
-set text description in 'test_text = ['xxx']' in sample.sampling.py
+set text description in 'test_text = ['xxx']' in sample.sampling.py  
 run sampling.py for sampling.
