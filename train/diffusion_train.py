@@ -1,6 +1,4 @@
-"""
-Train a diffusion model on images.
-"""
+
 
 import argparse
 
