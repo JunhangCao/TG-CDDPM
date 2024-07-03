@@ -22,38 +22,38 @@ https://drive.google.com/drive/folders/1aN3cScePnxq368pL6ymeKFj8EFenPBj0?usp=dri
 
 ## File Structure  
 └─TG-CDDP-main  
-    │  README.md  
-    │  requirements.txt  
+    │>>README.md  
+    │>>requirements.txt  
     │  
     ├─config  
-    │      backen_config.py  
-    │      base_config.py  
-    │      config.json  
+    │>>backen_config.py  
+    │>>base_config.py  
+    │>>config.json  
     │  
     ├─mapping  
-    │      vocab.txt  
+    │>>vocab.txt  
     │  
     ├─model  
-    │      backend.py  
-    │      diffusion.py  
-    │      diffusion_sample.py  
-    │      fp16_utils.py  
-    │      gaussian_diffusion.py  
-    │      losses.py  
-    │      nn.py  
-    │      resample.py  
-    │      respace.py  
-    │      rounding.py  
-    │      sampling.py  
+    │>>backend.py  
+    │>>diffusion.py  
+    │>>diffusion_sample.py  
+    │>>fp16_utils.py  
+    │>>gaussian_diffusion.py  
+    │>>losses.py  
+    │>>nn.py  
+    │>>resample.py  
+    │>>respace.py  
+    │>>rounding.py  
+    │>>sampling.py  
     │  
     ├─train  
-    │      diffusion_train.py  
-    │      TexPepAlignment.py  
+    │>>diffusion_train.py  
+    │>>TexPepAlignment.py  
     │  
     └─utils  
-            script_utils.py  
-            tokenizer.py  
-            train_util.py  
+    │>>script_utils.py  
+    │>>tokenizer.py  
+    │>>train_util.py  
   
 ## Train
 if you want re-train the whole framework. <br/>
