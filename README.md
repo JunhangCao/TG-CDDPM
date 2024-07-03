@@ -31,7 +31,8 @@ adjust forward_backward in utils.train_utils.py and loss function in gaussian_di
 def forward_backward():  
 >>...  
 >>if k == 'input_ids':  
->>>>micro_cond[k] = v[i: i + self.microbatch].to(self.device)  
+>>>>micro_cond[k] = v[i: i + self.microbatch].to(self.device)
+  
 >>...  
 
 def training_losses_seq2seq(self, model, x_start, t, model_kwargs=None, noise=None):  
@@ -46,7 +47,8 @@ adjust forward_backward in utils.train_utils.py and loss function in diffusion f
 def forward_backward():  
 >>...  
 >>if k == 'input_ids':  
->>>>micro_cond[k] = v[i: i + self.microbatch].to(self.device)  
+>>>>micro_cond[k] = v[i: i + self.microbatch].to(self.device)
+  
 >>else:  
 >>>>with torch.no_grad():  
 >>>>>>text_features = self.text_encoder(v[i: i + self.microbatch].to(self.device))  
@@ -55,7 +57,8 @@ def forward_backward():
 >>>>>>timesteps = torch.tensor([0] * text_features.shape[0], device=self.device)  
 >>>>>>fac_text_z = self.facilitator(inputs_embeds=text_features_norm, timesteps=timesteps)  
 >>>>>>fac_text_z_norm = fac_text_z / fac_text_z.norm(dim=-1, keepdim=True)  
->>>>>>micro_cond['self_condition'] = text_features_norm  
+>>>>>>micro_cond['self_condition'] = text_features_norm
+  
 >>...  
   
 def training_losses_seq2seq(self, model, x_start, t, model_kwargs=None, noise=None):  
