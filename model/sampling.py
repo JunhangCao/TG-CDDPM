@@ -1,35 +1,21 @@
 import argparse
 import os
-from functools import partial
+
 
 import jsonlines
-import matplotlib.pyplot as plt
-import numpy as np
 import torch
 import torch as th
-import torch.nn.functional as F
-from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
-
+from config.backen_config import ProGenConfig
+from train.TexPepAlignment import TextEncoder, PepEncoder
+from utils.tokenizer import TextTokenizer
 from model.backend import FacModel
 from utils.script_utils import (
-    NUM_CLASSES,
     model_and_diffusion_defaults,
-    classifier_defaults,
     create_model_and_diffusion,
-    create_classifier,
     add_dict_to_argparser,
     args_to_dict,
 )
-
-from config.backen_config import ProGenConfig
-from train.TexPepAlignment import TextEncoder, BatchDataset, PepEncoder, get_text_peptides
-from utils.tokenizer import TextTokenizer, PepTokenizer
-
-def empirical_covar(X):
-    Xcent = X - X.mean(0, keepdim=True)
-    cov = (Xcent.t() @ Xcent) / Xcent.size(0)
-    return cov
 
 class PretainedTokenizer():
     def __init__(self):
@@ -75,11 +61,6 @@ class PretainedTokenizer():
             s += self.rev_vocab[int(i)]
         return s
 
-
-def text_loss(source, target):
-    source_feat = source[-1] / source[-1].norm(dim=-1, keepdim=True)
-    target = target / target.norm(dim=-1, keepdim=True)
-    return (source_feat * target).sum(1)
 
 def main():
     args = create_argparser().parse_args()
