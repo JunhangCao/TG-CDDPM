@@ -68,5 +68,5 @@ def training_losses_seq2seq(self, model, x_start, t, model_kwargs=None, noise=No
 run diffusion_train.py for fine-training text-guided DDPM.
 
 ## sampling
-set text description in 'test_text = ['xxx']' in sample.sampling.py  
+set text description in 'test_text = ['xxx']' in model.sampling.py  
 run sampling.py for sampling.
