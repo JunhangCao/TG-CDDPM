@@ -29,9 +29,9 @@ run TexPepAlignment.py for training peptide encoder and text encoder.
 #### stage 2
 adjust forward_backward in utils.train_utils.py and loss function in gaussian_diffusion.py for adapter.  
 def forward_backward():  
->>>>...  
+>>...  
     if k == 'input_ids':  
-        micro_cond[k] = v[i: i + self.microbatch].to(self.device)  
+        >>micro_cond[k] = v[i: i + self.microbatch].to(self.device)  
     ....  
 
 def training_losses_seq2seq(self, model, x_start, t, model_kwargs=None, noise=None):  
