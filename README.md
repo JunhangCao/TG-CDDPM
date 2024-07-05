@@ -56,13 +56,13 @@ https://drive.google.com/drive/folders/1aN3cScePnxq368pL6ymeKFj8EFenPBj0?usp=dri
     │  train_util.py  
   
 ## Train
-if you want re-train the whole framework. <br/>
+if you intend to re-train the whole framework. <br/>
 
 #### stage 1
 run TexPepAlignment.py for training peptide encoder and text encoder.
 
 #### stage 2
-adjust forward_backward in utils.train_utils.py and loss function in gaussian_diffusion.py for adapter.  
+adjust the 'forward_backward' function in 'utils.train_utils.py' and the loss function in 'gaussian_diffusion.py' for adapter.  
 def forward_backward():  
 >>...  
 >>if k == 'input_ids':  
@@ -78,7 +78,7 @@ run diffusion_train.py for training adapter.
 
 #### stage 3
 pretrained DDPM has been prepared.  
-adjust forward_backward in utils.train_utils.py and loss function in diffusion for text-guided fine-tuning DDPM.  
+adjust the 'forward_backward' function in 'utils.train_utils.py' and the loss function in 'gaussian_diffusion.py' for text-guided fine-tuning DDPM.  
 def forward_backward():  
 >>...  
 >>if k == 'input_ids':  
@@ -103,5 +103,5 @@ def training_losses_seq2seq(self, model, x_start, t, model_kwargs=None, noise=No
 run diffusion_train.py for fine-training text-guided DDPM.
 
 ## Sampling
-set text description in 'test_text = ['xxx']' in model.sampling.py  
+set the text description using 'test_text = ['xxx']' in 'model.sampling.py'  
 run sampling.py for sampling.
