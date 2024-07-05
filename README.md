@@ -59,7 +59,7 @@ https://drive.google.com/drive/folders/1aN3cScePnxq368pL6ymeKFj8EFenPBj0?usp=dri
 if you intend to re-train the whole framework. <br/>
 
 #### stage 1
-run TexPepAlignment.py for training peptide encoder and text encoder.
+run 'TexPepAlignment.py' for training peptide encoder and text encoder.
 
 #### stage 2
 adjust the 'forward_backward' function in 'utils.train_utils.py' and the loss function in 'gaussian_diffusion.py' for adapter.  
