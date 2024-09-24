@@ -1,10 +1,9 @@
-
+import sys
+sys.path.append("/TG-CDDPM-main")
 
 import argparse
-
 import torch.cuda
 from transformers import AutoTokenizer
-
 from train.TexPepAlignment import TextEncoder, PepEncoder
 from config.backen_config import ProGenConfig
 from model.backend import FacModel
