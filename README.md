@@ -3,11 +3,11 @@
 # Contents
 
 - [Installation](#Installation)
-- [Data and Checkpoints](#Data and Checkpoints)
+- [Data and Checkpoints](#Data-and-Checkpoints)
 - [Train](#Train)
 - [Sampling](#Sampling)
 - [Result](#Result)
-- [Molecular Dynamics Simulation](#Molecular Dynamics Simulation)
+- [Molecular Dynamics Simulation](#Molecular-Dynamics-Simulation)
 - [Reference](#Reference)
 
 ## Installation
