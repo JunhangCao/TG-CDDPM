@@ -1,7 +1,7 @@
+import sys
+sys.path.append("/TG-CDDPM-main")
 import argparse
 import os
-
-
 import jsonlines
 import torch
 import torch as th
