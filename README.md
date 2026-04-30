@@ -20,7 +20,7 @@
 
 - pip install -r requirements.txt
 - installing pytorch-cuda version through the way of official instruction
-    -- conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 c pytorch
+    conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 c pytorch
 
 
 ## Data and Checkpoints
