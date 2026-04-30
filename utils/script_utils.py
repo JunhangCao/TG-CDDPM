@@ -1,5 +1,4 @@
 import argparse
-import inspect
 
 import model.gaussian_diffusion as gd
 from model.backend import PepClassifier, ProGenForCausalLM

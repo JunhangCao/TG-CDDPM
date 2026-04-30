@@ -2,14 +2,20 @@
 Generate a large batch of image samples from a model and save them as a large
 numpy array. This can be used to produce samples for FID evaluation.
 """
-
+import sys
+sys.path.append("/TG-CDDPM-main")
 import argparse
 
 import jsonlines
 import torch
 import torch as th
 
-from amPEP.amPEPpy.amPEP import amp_score
+"""
+if you want to use amPEP to evaluate the activity of the generated peptides, you can uncomment the following code
+and download the amPEP from https://github.com/tlawrence3/amPEPpy.git
+"""
+# from amPEP.amPEPpy.amPEP import amp_score
+
 from utils.tokenizer import tokenizer, load_data
 from utils.script_utils import (
     model_and_diffusion_defaults,
@@ -68,10 +74,10 @@ def main():
                 temp = {}
                 # decoded_seq = myTokenizer.decode_token(seq).replace(' ','')
                 temp['trg'] = seq
-                temp['act'] = amp_score(seq[0])
+                # temp['act'] = amp_score(seq[0])
                 # file.write(temp)
                 print(seq)
-                print(amp_score(seq[0]))
+                # print(amp_score(seq[0]))
                 # print(evaluate(seq[0]))
         print(f"{length}sampling complete")
 
@@ -83,6 +89,7 @@ def create_argparser():
         max_loop=400,
         use_ddim=False,
         vocab_path="../mapping/vocab.txt",
+        # path of fine-tuned diffusion model checkpoint
         model_path="../checkpoints/diffusion_model010000.pt",
         classifier_scale=1.0,
         use_fp16=False,
